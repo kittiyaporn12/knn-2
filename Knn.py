@@ -34,13 +34,21 @@ st.write(dt.head(10))
 st.subheader("ข้อมูลส่วนสุดท้าย 10 แถว")
 st.write(dt.tail(10))
 
-dt1 = dt['petallength'].sum()
-dt2 = dt['petalwidth'].sum()
-dt3 = dt['sepallength'].sum()
-dt4 = dt['sepalwidth'].sum()
+dt1 = dt['age'].sum()
+dt2 = dt['sex'].sum()
+dt3 = dt['ChestPainType'].sum()
+dt4 = dt['RestingBP'].sum()
+dt5 = dt['Cholesterol'].sum()
+dt6 = dt['FastingBS'].sum()
+dt7 = dt['RestingECG'].sum()
+dt8 = dt['MaxHR'].sum()
+dt9 = dt['ExerciseAngina'].sum()
+dt10 = dt['Oldpeak'].sum()
+dt11 = dt['ST_Slope'].sum()
 
-dx = [dt1, dt2, dt3, dt4]
-dx2 = pd.DataFrame(dx, index=["d1", "d2", "d3", "d4"])
+
+dx = [dt1, dt2, dt3, dt4,dt5, dt6, dt7,dt8, dt9, dt10, dt11]
+dx2 = pd.DataFrame(dx, index=["d1", "d2", "d3", "d4","d5", "d6", "d7", "d8","d9", "d10", "d11"])
 
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    #st.write(dt.head(10))
@@ -75,13 +83,13 @@ feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
 # วาดกราฟ boxplot
 st.write(f"### 🎯 Boxplot: {feature} แยกตามชนิดของดอกไม้")
 fig, ax = plt.subplots()
-sns.boxplot(data=dt, x='variety', y=feature, ax=ax)
+sns.boxplot(data=dt, x='HeartDisease', y=feature, ax=ax)
 st.pyplot(fig)
 
 # วาด pairplot
 if st.checkbox("แสดง Pairplot (ใช้เวลาประมวลผลเล็กน้อย)"):
     st.write("### 🌺 Pairplot: การกระจายของข้อมูลทั้งหมด")
-    fig2 = sns.pairplot(dt, hue='variety')
+    fig2 = sns.pairplot(dt, hue='HeartDisease')
     st.pyplot(fig2)
 
 html_8 = """
