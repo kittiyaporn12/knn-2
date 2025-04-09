@@ -13,7 +13,7 @@ col1, col2 = st.columns(2)
 
 with col1:
    st.header("กิตติ")
-   st.image("./img/2.jpg")
+   st.image("./img/2.png")
 
 with col2:
    st.header("การทำนายโรคหัวใจ")
@@ -59,7 +59,7 @@ else:
 
 html_7 = """
 <div style="background-color:#c5f18a;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h5>ข้อมูล iris หรือข้อมูลดอกไม้สำหรับทำนาย</h5></center>
+<center><h5>ข้อมูลเกี่ยวกับสุขภาพ</h5></center>
 </div>
 """
 st.markdown(html_7, unsafe_allow_html=True)
@@ -81,7 +81,7 @@ st.subheader("📌 เลือกฟีเจอร์เพื่อดูก�
 feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
 
 # วาดกราฟ boxplot
-st.write(f"### 🎯 Boxplot: {feature} แยกตามชนิดของดอกไม้")
+st.write(f"### 🎯 Boxplot: {feature} ความน่าจะเป็น")
 fig, ax = plt.subplots()
 sns.boxplot(data=dt, x='HeartDisease', y=feature, ax=ax)
 st.pyplot(fig)
