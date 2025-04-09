@@ -125,9 +125,9 @@ if st.button("ทำนายผล"):
    
    out=Knn_model.predict(x_input)
 
-   if out[0] == 'maipen':
-    st.image("./img/5.jpg")
-   else:      
+   if out[0] == 1:
     st.image("./img/4.jpg")
+   else:      
+    st.image("./img/5.jpg")
 else:
     st.write("ไม่ทำนาย")
