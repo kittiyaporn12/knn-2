@@ -127,7 +127,7 @@ if st.button("ทำนายผล"):
 
    if out[0] == 'maipen':
     st.image("./img/4.jpg")
-   elif out[1] == 'pen':       
+   else:      
     st.image("./img/5.jpg")
 else:
     st.write("ไม่ทำนาย")
